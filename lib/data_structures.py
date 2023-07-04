@@ -57,19 +57,51 @@ def print_spicy_foods(spicy_foods):
 
 
 
-
-
 def get_spicy_food_by_cuisine(spicy_foods, cuisine):
-    pass
+    for food in spicy_foods:
+        if food["cuisine"] == cuisine:
+            return food
+    
+get_spicy_food_by_cuisine(spicy_foods, "Thai")
+
+
+# def get_spicy_food_by_cuisine(spicy_foods, cuisine):
+#     by_cuisine = []
+#     for food in spicy_foods:
+#         if food["cuisine"] == cuisine:
+#             by_cuisine.append(food)
+#     return by_cuisine
+# get_spicy_food_by_cuisine(spicy_foods, "Thai")
+
+
+
 
 def print_spiciest_foods(spicy_foods):
-    pass
+    spicy = []
+    chili_image = "🌶"
+    for food in spicy_foods:
+        heat_level = food["heat_level"]
+        if heat_level > 5:
+            spicy.append(f"{food['name']} ({food['cuisine']}) | Heat Level: {chili_image * heat_level}")
+    for food in spicy:
+        print(food)
+
+
+
 
 def get_average_heat_level(spicy_foods):
-    pass
+    heat_level = 0
+    for food in spicy_foods:
+        heat_level += food["heat_level"]
+        ave = heat_level / len(spicy_foods)
+    return ave
+
+
+
 
 def create_spicy_food(spicy_foods, spicy_food):
-    pass
+    spicy_foods.append(spicy_food)
+    return spicy_foods
 
 
 
@@ -82,12 +114,3 @@ def create_spicy_food(spicy_foods, spicy_food):
 
 
 
-
-
-
-# def get_spiciest_foods(spicy_foods):
-#     spiciest = []
-#     for food in spicy_foods:
-#         spiciest.append(food["heat_level"])
-#         spiciest.sort()
-#     return spiciest
