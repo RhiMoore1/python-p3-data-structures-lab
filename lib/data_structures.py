@@ -16,23 +16,18 @@ spicy_foods = [
     },
 ]
 
+
 def get_names(spicy_foods):
-    names = []
-    for food in spicy_foods:
-        names.append(food["name"])
-    return names
+    return[food["name"] for food in spicy_foods]
 
 
 
 def get_spiciest_foods(spicy_foods):
-    spiciest = []
-    for food in spicy_foods:
-        if food["heat_level"] > 5:
-            spiciest.append(food)
-    return spiciest
+    return[food for food in spicy_foods if food["heat_level"] > 5]
 
 
-    
+
+
 
 def print_spicy_foods(spicy_foods):
     spicy = []
@@ -44,17 +39,6 @@ def print_spicy_foods(spicy_foods):
         print(food, end='\n')
     
     
-# terminal output
-# >>> print_spicy_foods(spicy_foods)
-# Green Curry (Thai) | Heat Level: 🌶 🌶 🌶 🌶 🌶 🌶 🌶 🌶 🌶 
-# Buffalo Wings (American) | Heat Level: 🌶 🌶 🌶 
-# Mapo Tofu (Sichuan) | Heat Level: 🌶 🌶 🌶 🌶 🌶 🌶 
-
-# >>> print_spicy_foods(spicy_foods)
-# Green Curry (Thai) | Heat Level: 🌶🌶🌶🌶🌶🌶🌶🌶🌶
-# Buffalo Wings (American) | Heat Level: 🌶🌶🌶
-# Mapo Tofu (Sichuan) | Heat Level: 🌶🌶🌶🌶🌶🌶
-
 
 
 def get_spicy_food_by_cuisine(spicy_foods, cuisine):
@@ -64,14 +48,6 @@ def get_spicy_food_by_cuisine(spicy_foods, cuisine):
     
 get_spicy_food_by_cuisine(spicy_foods, "Thai")
 
-
-# def get_spicy_food_by_cuisine(spicy_foods, cuisine):
-#     by_cuisine = []
-#     for food in spicy_foods:
-#         if food["cuisine"] == cuisine:
-#             by_cuisine.append(food)
-#     return by_cuisine
-# get_spicy_food_by_cuisine(spicy_foods, "Thai")
 
 
 
@@ -102,7 +78,6 @@ def get_average_heat_level(spicy_foods):
 def create_spicy_food(spicy_foods, spicy_food):
     spicy_foods.append(spicy_food)
     return spicy_foods
-
 
 
 
